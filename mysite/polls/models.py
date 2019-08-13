@@ -18,10 +18,14 @@ class Question(models.Model):
     def verbose_question_text(self):
         return "Question : %s" % (self.question_text)
 
-    was_published_recently.admin_order_field = 'pub_date'
-    was_published_recently.boolean = True
-    was_published_recently.short_description = 'Published recently?'
+    def choices(self):
+        if not hasattr(self, "_choices"):
+            self._choices = self.choice_set.all()
+        return self._choices
 
+    was_published_recently.admin_order_field = "pub_date"
+    was_published_recently.boolean = True
+    was_published_recently.short_description = "Published recently?"
 
 
 class Choice(models.Model):
