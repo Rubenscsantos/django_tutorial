@@ -2,11 +2,16 @@ from rest_framework import serializers
 from .models import Choice
 
 
+class VoteSerializer(serializers.Serializer):
+    choice_id = serializers.IntegerField()
+
+
 class ChoiceSerializer(serializers.Serializer):
     choice_text = serializers.CharField(max_length=200)
 
     def create(self, validated_data):
         return Choice.objects.create(**validated_data)
+
 
 class QuestionListPageSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
