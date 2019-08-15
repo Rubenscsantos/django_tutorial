@@ -30,6 +30,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+)
+
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'django.contrib.admin',
@@ -39,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_jenkins',
 ]
 
 MIDDLEWARE = [
