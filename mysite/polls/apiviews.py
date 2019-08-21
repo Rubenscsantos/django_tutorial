@@ -1,6 +1,3 @@
-from datetime import datetime
-import json
-from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.decorators import api_view
