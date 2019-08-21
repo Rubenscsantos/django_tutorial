@@ -120,3 +120,30 @@ class QuestionDetailViewTests(TestCase):
         url = reverse("polls:detail", args=(past_question.id,))
         response = self.client.get(url)
         self.assertContains(response, past_question.question_text)
+
+    def test_get(self):
+        NotImplemented
+
+    def test_patch(self):
+        NotImplemented
+
+    def test_delete(self):
+        NotImplemented
+
+class QuestionViewTests(TestCase):
+    def test_get(self):
+        NotImplemented
+
+    def test_post(self):
+        NotImplemented
+
+class ChoicesViewTests(TestCase):
+    def test_post(self):
+        NotImplemented
+
+class VoteViewTests(TestCase):
+    def test_patch(self):
+        NotImplemented
+class QuestionResultView(TestCase):
+    def test_get(self):
+        NotImplemented
